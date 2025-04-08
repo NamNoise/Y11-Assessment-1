@@ -1,7 +1,15 @@
 from testhelper import test
 
 def is_square_magic(square):
-    pass # Replace this with your code
+    magic_sum = sum(square[0])
+    for row in square:
+        if sum(row) != magic_sum:
+            return False
+    
+    for col in range(len(square)):
+        if sum(square[row][col] for row in range(len(square))) != magic_sum:
+            return False
+    
 
 
 
